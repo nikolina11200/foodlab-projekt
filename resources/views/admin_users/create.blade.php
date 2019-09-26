@@ -5,14 +5,14 @@
 @section('stylesheets')
 
     <link rel='stylesheet' href='/css/parsley.css' />
-
+    
 @endsection
 
 @section('content')
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Create new user</h1>
+            <h1 class="niceText">Create new user</h1>
             <hr>
             <form  data-parsley-validate method="POST" action="{{ route('admin_users.store') }}">
                 <div class="form-group">
@@ -35,7 +35,7 @@
                     <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password:</label>
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                 </div>
-                <input type="submit" value="Create User" class="btn btn-success btn-lg btn-block">
+                <input type="submit" value="Create User" class="btn btn-info btn-lg btn-block">
                 <input type="hidden" name="_token" value="{{ Session::token() }}">
             </form>
         </div>

@@ -13,17 +13,21 @@
 </div>
 
 @endif
+<br><br><br>
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-12 col-md-offset-2 shadow p-3 mb-5 bg-white rounded">
     <div class="panel panel-default">
-        <div class="panel-heading" ><h1>Choose user role!</h1></div>
-        <?php if(auth()->user()->isAdmin == 1){?>
+        <div class="panel-heading" ><h1 class="niceText" style="text-align:center;">Choose user role!</h1></div>
+        <div class="row">
+        <div class="col-md-6">
     <div class="panel-body">
-        <a href="{{url('admin/routes')}}">Admin</a>
+        <a href="{{url('admin/routes')}}" class="btn btn-danger btn-block">Admin</a>
     </div>
-    <?php } else ?>
-        <a href="{{url('/')}}">Normal user</a>
-    
+        </div>
+        <div class="col-md-6">
+        <a href="{{url('/')}}" class="btn btn-info btn-block">Normal user</a>
+        </div>
+        </div>
 </div>
 </div>
 </div>

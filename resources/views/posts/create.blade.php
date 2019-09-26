@@ -18,9 +18,9 @@
 
 @section('content')
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Create new recipe</h1>
+            <h1 class="niceText">Create new recipe</h1>
             <hr>
             <form  data-parsley-validate method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
                 <div class="form-group">
@@ -43,7 +43,7 @@
                     <label name="body">Preparation:</label>
                     <textarea id="body" name="body" rows="10" class="form-control" required></textarea>
                 </div>
-                <input type="submit" value="Create Post" class="btn btn-success btn-lg btn-block">
+                <input type="submit" value="Create Recipe" class="btn btn-info btn-lg btn-block">
                 <input type="hidden" name="_token" value="{{ Session::token() }}">
             </form>
         </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Rating;
 use Session;
 use Purifier;
 use Image;
@@ -19,7 +20,7 @@ class AdminPostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->paginate(10);
+        $posts = Post::with('users')->orderBy('id', 'desc')->paginate(10);
         return view('admin_posts.index')->withPosts($posts);
     }
 
@@ -98,6 +99,7 @@ class AdminPostController extends Controller
         $post->ratings()->save($rating);
         return redirect()->back();
   }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -172,10 +174,11 @@ class AdminPostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        
         Storage::delete($post->image);
 
         $post->delete();
-
+        
         Session::flash('success', 'The recipe was successfully deleted!');
         return redirect()->route('admin_posts.index');
     }

@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 shadow p-3 mb-5 bg-white rounded">
             <h1>{{ $user->name }}</h1>
             <p class="lead">{{ $user->email }}</p>
             <p class="lead">{{ $user->password }}</p>
@@ -25,7 +25,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="{{ route('admin_users.edit', $user->id) }}" class="btn btn-primary btn-block">Edit</a>
+                        <a href="{{ route('admin_users.edit', $user->id) }}" class="btn btn-info btn-block">Edit</a>
                     </div>
                     <div class="col-sm-6">
                         <form  method="POST" action="{{ route('admin_users.destroy', $user->id) }}">
@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-md-12">
                     <br>
-                    <a href="{{ route('admin_users.index') }}" class="btn btn-default btn-block">Show all Users</a>
+                    <a href="{{ route('admin_users.index') }}" class="btn btn-default btn-block"><strong>Show all Users</strong></a>
                     </div>
                 </div>
                 </div>

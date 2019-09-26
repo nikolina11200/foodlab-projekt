@@ -28,10 +28,10 @@
 
                     <label name="slug">Slug:</label>
                     <input id="slug" name="slug" minlength='5' maxlength='255' required class="form-control" value="{{ old('slug', $post->slug) }}">
-                   
+                    <br>
                     <label name="featured_image">Upload your image:</label>
                     <input id="featured_image" name="featured_image" rows="10" type="file">
-
+                    <br>
                     <label name="ingridients">Ingridients:</label>
                     <textarea id="ingridients" name="ingridients" rows="10"  required class="form-control">{{ old('ingridients', $post->ingridients) }}</textarea>
                 
